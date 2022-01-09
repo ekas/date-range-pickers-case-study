@@ -8,6 +8,7 @@ import {
   faCar,
   faSortDown,
   faLongArrowAltRight,
+  faExchangeAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -79,7 +80,24 @@ function App() {
                   />
                 </span>
               </div>
-              <div className="picker"></div>
+              <div className="placeholder">
+                <div className="to-from">
+                  <div className="to-from-container to-from-container-1">
+                    <span className="to-from-1">From</span>
+                    <span className="to-from-2">New Delhi</span>
+                    <span className="to-from-3">Delhi, India</span>
+                  </div>
+                  <div className="exchange-arrow">
+                    <FontAwesomeIcon icon={faExchangeAlt} size="2x" />
+                  </div>
+                  <div className="to-from-container to-from-container-2">
+                    <span className="to-from-1">To</span>
+                    <span className="to-from-2">Schmalkalden</span>
+                    <span className="to-from-3">Thuringia, Germany</span>
+                  </div>
+                </div>
+                <div className="picker">qbc</div>
+              </div>
               <div className="search-button">
                 Search Flights
                 <FontAwesomeIcon

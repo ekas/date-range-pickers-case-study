@@ -1,6 +1,7 @@
 :root {
   --white: #ffffff;
   --fade-white: #edeaea;
+  --color-border: #cac6c6;
   --secondary: #2a2c2b;
   --primary: rgba(255, 90, 95);
 }
@@ -87,7 +88,7 @@ body {
 }
 
 .content {
-  margin: 130px 100px 0;
+  margin: 100px 100px 0;
 }
 
 .heading {
@@ -113,7 +114,7 @@ body {
 }
 
 .tabs-container {
-  margin-top: 100px;
+  margin-top: 50px;
   position: relative;
 }
 
@@ -179,8 +180,69 @@ body {
   margin-left: 5px;
 }
 
+.placeholder {
+  height: 230px;
+  width: 100%;
+  column-gap: 20px;
+  padding: 20px 20px 75px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-from,
 .picker {
-  height: 250px;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker {
+  border: 1px solid red;
+}
+
+.to-from-1 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.to-from-2 {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.to-from-3 {
+  font-size: px;
+}
+
+.to-from-container {
+  display: flex;
+  flex-grow: 1;
+  height: 115px;
+  padding: 15px 0 15px 40px;
+  flex-direction: column;
+  border-radius: 10px;
+  justify-content: space-between;
+  border: solid 1px var(--color-border);
+}
+
+.to-from-container-1 {
+  margin-right: calc(-1 * 15px);
+}
+
+.to-from-container-2 {
+  margin-left: calc(-1 * 15px);
+}
+
+.exchange-arrow {
+  border: solid 1px var(--color-border);
+  color: var(--color-border);
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 50%;
+  z-index: 9999;
 }
 
 .search-button {
