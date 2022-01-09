@@ -10,6 +10,7 @@ import {
   faLongArrowAltRight,
   faExchangeAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import AirbnbDatePicker from "./dates/airbnb/airbnbDatePicker";
 
 function App() {
   return (
@@ -96,7 +97,9 @@ function App() {
                     <span className="to-from-3">Thuringia, Germany</span>
                   </div>
                 </div>
-                <div className="picker">qbc</div>
+                <div className="picker">
+                  <AirbnbDatePicker></AirbnbDatePicker>
+                </div>
               </div>
               <div className="search-button">
                 Search Flights
