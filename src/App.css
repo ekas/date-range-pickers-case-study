@@ -256,6 +256,7 @@ body {
   border-radius: 10px;
   outline: none;
   cursor: pointer;
+  border: none;
 }
 
 .search-button:hover {

@@ -1,0 +1,45 @@
+.task-panel {
+  color: #fff;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-heading {
+  padding: 10px 70px;
+  text-align: justify;
+}
+
+.continue-button {
+  font-weight: 500;
+  font-size: 20px;
+  background: var(--secondary);
+  color: var(--white) !important;
+  padding: 17px 30px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 100px;
+  border: none;
+}
+
+.continue-button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+.tasks-container {
+  margin-top: 20px;
+}
+
+.task-item {
+  margin-top: 10px;
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+  pointer-events: none;
+  cursor: none;
+}
