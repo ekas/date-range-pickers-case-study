@@ -11,6 +11,7 @@ import {
   faExchangeAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import AirbnbDatePicker from "./dates/airbnb/airbnbDatePicker";
+import GoogleFlightDatePicker from "./dates/google-flight/googleFlightDatePicker";
 
 function App() {
   return (
@@ -98,7 +99,8 @@ function App() {
                   </div>
                 </div>
                 <div className="picker">
-                  <AirbnbDatePicker></AirbnbDatePicker>
+                  <AirbnbDatePicker />
+                  {/* <GoogleFlightDatePicker /> */}
                 </div>
               </div>
               <div className="search-button">
