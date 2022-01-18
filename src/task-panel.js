@@ -22,7 +22,7 @@ const TaskPanel = ({
             <strong>Use Case: </strong>You see some tasks listed below. You will
             be taken through them one by one. Your job will involve selecting a
             date range on the available UI for your upcoming flight schedule
-            from New Delhi, India, to Schmalkalden, Thuringia, Germany. As you
+            from Accra, Ghana to New Delhi, India or vice-a-versa. As you
             complete them, the system will check to mark them. And at last, you
             could submit feedback based on your experience.
           </div>
@@ -95,8 +95,8 @@ const TaskPanel = ({
             </div>
             <div className="questionnaire-item">
               <span className="label">
-                Are you new to using booking applications such this date-picker
-                application?
+                Are you new to using booking applications such as this
+                date-picker application?
               </span>
               <span>
                 <input type="radio" name="new" /> Yes
@@ -105,7 +105,7 @@ const TaskPanel = ({
                 <input type="radio" name="new" /> No
               </span>
             </div>
-            <div className="questionnaire-item"></div>
+            <button className="continue-button">Submit</button>
           </div>
         </>
       )}
