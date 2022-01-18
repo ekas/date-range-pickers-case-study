@@ -3,7 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./task-panel.css";
 
-const TaskPanel = ({ tasks, closeTasksPanel, questionnaire, count }) => {
+const TaskPanel = ({
+  tasks,
+  closeTasksPanel,
+  questionnaire,
+  count,
+  minutes,
+  seconds,
+}) => {
   return (
     <div className="task-panel">
       {questionnaire === false ? (
@@ -20,6 +27,16 @@ const TaskPanel = ({ tasks, closeTasksPanel, questionnaire, count }) => {
             could submit feedback based on your experience.
           </div>
           <div className="heading">{count === 0 ? "App A" : "App B"}</div>
+          {seconds !== 0 && (
+            <div
+              className={
+                minutes >= 2 && seconds > 0 ? "notify-red" : "notify-green "
+              }
+            >
+              Task completed in {minutes} mins and {seconds} secs
+            </div>
+          )}
+
           <div className="tasks-container">
             {tasks.map((task) => (
               <div className="task-item" key={task.id}>

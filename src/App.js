@@ -15,6 +15,7 @@ import AirbnbDatePicker from "./dates/airbnb/airbnbDatePicker";
 import GoogleFlightDatePicker from "./dates/google-flight/googleFlightDatePicker";
 import TaskPanel from "./task-panel";
 import { shuffleArray } from "./helpers";
+import { useStopwatch } from "react-timer-hook";
 
 const App = () => {
   const datePickerPlugins = ["airbnb", "google-flight"];
@@ -62,7 +63,7 @@ const App = () => {
   }, [selectedPlugin]);
 
   const updateTasks = () => {
-    debugger;
+    pause();
     setTasks(
       tasks.map((task) => {
         if (task.id === currentTaskId) {
@@ -72,7 +73,6 @@ const App = () => {
       })
     );
     const currentTaskIndex = tasks.findIndex((task) => !task.checked);
-    debugger;
     if (currentTaskIndex !== -1) {
       setCurrentTaskId(tasks[currentTaskIndex].id);
     } else {
@@ -94,14 +94,25 @@ const App = () => {
     setTaskPanel(true);
   };
 
+  const { seconds, minutes, start, pause, reset } = useStopwatch({
+    autoStart: false,
+  });
+
   return (
     <div className="App">
+      {/* {minutes}:{seconds} */}
       {isTaskPanelLoaded ? (
         <TaskPanel
           tasks={tasks}
-          closeTasksPanel={() => setTaskPanel(false)}
+          closeTasksPanel={() => {
+            setTaskPanel(false);
+            reset();
+            start();
+          }}
           questionnaire={isQuestionnairePanelLoaded}
           count={countPluginCompleted}
+          minutes={minutes}
+          seconds={seconds}
         />
       ) : (
         <div className="header-bg">
