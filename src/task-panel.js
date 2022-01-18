@@ -7,7 +7,7 @@ const TaskPanel = ({
   tasks,
   closeTasksPanel,
   questionnaire,
-  count,
+  appName,
   minutes,
   seconds,
 }) => {
@@ -26,7 +26,9 @@ const TaskPanel = ({
             complete them, the system will check to mark them. And at last, you
             could submit feedback based on your experience.
           </div>
-          <div className="heading">{count === 0 ? "App A" : "App B"}</div>
+          <div className="heading">
+            {appName === "airbnb" ? "App B" : "App A"}
+          </div>
           {seconds !== 0 && (
             <div
               className={

@@ -110,7 +110,7 @@ const App = () => {
             start();
           }}
           questionnaire={isQuestionnairePanelLoaded}
-          count={countPluginCompleted}
+          appName={selectedPlugin}
           minutes={minutes}
           seconds={seconds}
         />
