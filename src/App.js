@@ -22,7 +22,7 @@ const App = () => {
     {
       id: 1,
       question:
-        "Select a start date (20th June,2022) and end date(1st July,2022) from the date picker application here provided.",
+        "Select a start date (7th June,2022) and end date(1st July,2022) from the date picker application here provided.",
       checked: false,
     },
     {
@@ -42,7 +42,7 @@ const App = () => {
   const [currentTaskId, setCurrentTaskId] = useState(tasks[0].id);
   const [isTaskPanelLoaded, setTaskPanel] = useState(true);
   const [isQuestionnairePanelLoaded, setQuestionnairePanel] = useState(false);
-  const [countPluginCompleted, setCountPluginCompleted] = useState(1);
+  const [countPluginCompleted, setCountPluginCompleted] = useState(0);
   const [selectedPlugin, setSelectedPlugin] = useState(
     shuffleArray(datePickerPlugins)[0]
   );
@@ -62,6 +62,7 @@ const App = () => {
   }, [selectedPlugin]);
 
   const updateTasks = () => {
+    debugger;
     setTasks(
       tasks.map((task) => {
         if (task.id === currentTaskId) {
@@ -71,6 +72,7 @@ const App = () => {
       })
     );
     const currentTaskIndex = tasks.findIndex((task) => !task.checked);
+    debugger;
     if (currentTaskIndex !== -1) {
       setCurrentTaskId(tasks[currentTaskIndex].id);
     } else {
@@ -82,14 +84,14 @@ const App = () => {
         })
       );
       setCurrentTaskId(tasks[0].id);
-      if (countPluginCompleted === datePickerPlugins.length) {
+      if (countPluginCompleted === datePickerPlugins.length - 1) {
         setQuestionnairePanel(true);
       } else {
         setSelectedPlugin(datePickerPlugins[1]);
         setCountPluginCompleted(countPluginCompleted + 1);
       }
     }
-    setTaskPanel(false);
+    setTaskPanel(true);
   };
 
   return (
@@ -97,7 +99,7 @@ const App = () => {
       {isTaskPanelLoaded ? (
         <TaskPanel
           tasks={tasks}
-          updateTasks={updateTasks}
+          closeTasksPanel={() => setTaskPanel(false)}
           questionnaire={isQuestionnairePanelLoaded}
           count={countPluginCompleted}
         />
@@ -169,27 +171,44 @@ const App = () => {
                   </span>
                 </div>
                 <div className="placeholder">
+                  <div className="picker">{pluginSwitch()}</div>
                   <div className="to-from">
                     <div className="to-from-container to-from-container-1">
-                      <span className="to-from-1">From</span>
-                      <span className="to-from-2">New Delhi</span>
-                      <span className="to-from-3">Delhi, India</span>
+                      {selectedPlugin === "airbnb" ? (
+                        <>
+                          <span className="to-from-1">From</span>
+                          <span className="to-from-2">Accra</span>
+                          <span className="to-from-3">Ghana</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="to-from-1">From</span>
+                          <span className="to-from-2">New Delhi</span>
+                          <span className="to-from-3">Delhi, India</span>
+                        </>
+                      )}
                     </div>
                     <div className="exchange-arrow">
                       <FontAwesomeIcon icon={faExchangeAlt} size="2x" />
                     </div>
                     <div className="to-from-container to-from-container-2">
-                      <span className="to-from-1">To</span>
-                      <span className="to-from-2">Schmalkalden</span>
-                      <span className="to-from-3">Thuringia, Germany</span>
+                      {selectedPlugin === "airbnb" ? (
+                        <>
+                          <span className="to-from-1">To</span>
+                          <span className="to-from-2">New Delhi</span>
+                          <span className="to-from-3">Delhi, India</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="to-from-1">To</span>
+                          <span className="to-from-2">Accra</span>
+                          <span className="to-from-3">Ghana</span>
+                        </>
+                      )}
                     </div>
                   </div>
-                  <div className="picker">{pluginSwitch()}</div>
                 </div>
-                <button
-                  className="search-button"
-                  onClick={() => setTaskPanel(true)}
-                >
+                <button className="search-button" onClick={() => updateTasks()}>
                   Search Flights
                   <FontAwesomeIcon
                     className="explore-arrow"

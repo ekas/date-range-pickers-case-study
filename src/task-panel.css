@@ -43,3 +43,19 @@
   pointer-events: none;
   cursor: none;
 }
+
+.questionnaire-container {
+  width: 60%;
+  padding: 20px 150px;
+}
+
+.questionnaire-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 20px;
+}

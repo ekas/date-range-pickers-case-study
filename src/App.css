@@ -87,7 +87,7 @@ body {
 }
 
 .content {
-  margin: 50px 100px 0;
+  margin: 20px 100px 0;
 }
 
 .heading {
@@ -188,8 +188,7 @@ body {
   justify-content: space-between;
 }
 
-.to-from,
-.picker {
+.to-from {
   display: flex;
   flex-grow: 2;
   align-items: center;
@@ -197,7 +196,8 @@ body {
 }
 
 .picker {
-  justify-content: center;
+  display: flex;
+  flex-grow: 2;
 }
 
 .to-from-1 {
@@ -247,7 +247,7 @@ body {
 .search-button {
   position: absolute;
   right: 40px;
-  bottom: 20px;
+  bottom: 0;
   font-weight: 500;
   font-size: 14px;
   background: var(--secondary);
