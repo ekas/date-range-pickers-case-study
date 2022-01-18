@@ -85,7 +85,7 @@ const TaskPanel = ({
             </div>
             <div className="questionnaire-item">
               <span className="label">
-                Which App variant do you feel is more convinient to use?
+                Q. Which App variant do you feel is more convenient to use?
               </span>
               <select name="variant" id="variant">
                 <option>Select App Variant</option>
@@ -95,7 +95,7 @@ const TaskPanel = ({
             </div>
             <div className="questionnaire-item">
               <span className="label">
-                Are you new to using booking applications such as this
+                Q. Are you new to using booking applications such as this
                 date-picker application?
               </span>
               <span>
