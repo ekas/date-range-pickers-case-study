@@ -10,7 +10,7 @@ This project aims to include the most famous 3rd party date range picker library
 Also, even if libraries are as per industry standards, does it fit the user's needs or not.
 
 ## Inpirations
- - I have always been inspired by how Airbnb has captured the tourism industry worldwide.
+ - We have always been inspired by how Airbnb has captured the tourism industry worldwide.
  - Would be curious to know that the first thing you see is a date picker to choose your holiday dates.
  You can see that the price sorts the list of hotels and hotels.
  - So, we wanted to analyze different UI designs around it to analyze the user-friendliness and usability.
